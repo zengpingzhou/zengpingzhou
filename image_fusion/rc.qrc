@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/image/fusion.svg</file>
+        <file>res/image/picture1.svg</file>
+        <file>res/zh_CN.qm</file>
+    </qresource>
+</RCC>
