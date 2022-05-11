@@ -8,7 +8,7 @@ set(VERSION_PATCH 1)
 
 #set path for QT
 set(CMAKE_PREFIX_PATH C:\\Qt\\Qt5.14.2\\5.14.2\\msvc2017_64)
-
+set(OpenCV_DIR C:/Opencv/opencv/build)
 file(GLOB_RECURSE QRC_SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.qrc)
 
 # Find includes in corresponding build directories
@@ -20,6 +20,7 @@ set(CMAKE_AUTOUIC ON)
 
 set(QRC_SOURCE_FILES rc.qrc)
 
+find_package(OpenCV REQUIRED)
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets Gui)
 find_package(Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 
@@ -48,7 +49,8 @@ target_link_libraries(${PROJECT_NAME}
 	PUBLIC
 	Qt5::Core
 	Qt5::Gui
-	Qt5::Widgets)
+	Qt5::Widgets
+	${OpenCV_LIBS})
 
 set(CMAKE_INSTALL_PREFIX ${PROJECT_BINARY_DIR}/installed)
 set(WINDEPLOYQT_DIR C:\\Qt\\Qt5.14.2\\5.14.2\\msvc2017_64\\bin)
